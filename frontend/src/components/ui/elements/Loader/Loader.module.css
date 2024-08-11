@@ -1,0 +1,166 @@
+
+.loader {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: auto;
+}
+
+.loaderBody::before,
+.loaderBody::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  margin: 200px auto;
+  width: 10px;
+  height: 10px;
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.loaderBody::before {
+  animation-name: droplets;
+}
+
+.primary.loaderBody::before {
+  background: #c75151;
+}
+
+.secondary.loaderBody::before {
+  background: #c7b151;
+}
+
+
+.loaderBody::after {
+  opacity: 0;
+  animation-name: ripples;
+}
+
+.primary.loaderBody::after {
+  border: 1px solid #c75151;
+}
+
+.secondary.loaderBody::after {
+  border: 1px solid #c7b151;
+}
+
+@keyframes droplets {
+  0%,
+  15% {
+    opacity: 1;
+  }
+  15% {
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(4);
+  }
+  60%,
+  90% {
+    opacity: 0;
+  }
+  90% {
+    transform: scale(3);
+  }
+  95%,
+  100% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ripples {
+  0%,
+  30% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 0.3;
+  }
+  90% {
+    transform: scale(3);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* 
+.button{
+
+} */
+
+
+.dots,
+.dots:before,
+.dots:after {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: dots 1.8s infinite ease-in-out;
+  animation: dots 1.8s infinite ease-in-out;
+}
+.dots {
+  color: #e4002b;
+  font-size: 10px;
+  margin: 0 auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.primary.dots {
+  color: var(--color-primary-contrast);
+}
+
+.secondary.dots {
+  color: var(--color-secondary-contrast);
+}
+
+
+.dots:before,
+.dots:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.dots:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.dots:after {
+  left: 1.5em;
+}
+@-webkit-keyframes dots {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes dots {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}

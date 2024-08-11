@@ -1,0 +1,27 @@
+
+.rounded{
+  border-radius: 20px;
+ 
+ }
+ .default{
+ 
+ 
+ }
+ 
+ 
+ 
+ .xsBtn{
+   background: gray;
+ }
+ .smBtn{
+   background: yellow;
+ }
+ .mdBtn{
+   background: orange;
+ }
+ .lgBtn{
+   background: blue;
+ }
+ .xlBtn{
+   background: red;
+ }
