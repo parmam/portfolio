@@ -29,7 +29,8 @@
       "@utils/*": ["./src/utils/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@services/*": ["./src/libs/services/*"],
-      "@store/*": ["./src/store/*"]
+      "@store/*": ["./src/store/*"],
+      "@contexts/*": ["./src/contexts/*"]
     }
   },
   "include": ["src"],

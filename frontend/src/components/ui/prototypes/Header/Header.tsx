@@ -6,6 +6,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
 import useWindowSize from "@hooks/useWindowSize";
 import { navItems } from "./model";
 import { Link } from "react-router-dom";
+import { HamburgerMenu } from "@components/ui/components";
 
 interface HeaderProps extends HTMLProps<HTMLElement> {}
 
@@ -16,17 +17,8 @@ const Header: FunctionComponent<HeaderProps> = (props) => {
 
   return (
     <header className={styles.header}>
-          <div>logo</div>
-          <nav className={styles.navContainer}>
-            {
-              navItems.map(item => <Link to={item.route}>{item.text}</Link>)
-            }
-          </nav>
-          <div className={styles.buttonsContainer}>
-            <FontAwesomeIcon icon={faUser} />
-            <FontAwesomeIcon icon={faSearch}/>
-            {isMobile &&  <div>hamburger</div>}
-          </div>
+          <HamburgerMenu />
+
     </header>
   );
 }

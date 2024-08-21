@@ -1,0 +1,20 @@
+.heroSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta según sea necesario */
+    background-color: #fff; /* Cambia el color de fondo si es necesario */
+}
+
+.standTitle {
+    font-family: 'Impact', sans-serif; /* O la fuente que elijas */
+    font-size: 5rem; /* Ajusta el tamaño según sea necesario */
+    color: black; /* Color del texto */
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+    transition: text-shadow 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.standTitle:hover {
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8); /* Aumenta la sombra al hacer hover */
+    transform: scale(1.1); /* Aumenta el tamaño del texto al hacer hover */
+}

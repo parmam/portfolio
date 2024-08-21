@@ -1,0 +1,110 @@
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+  35% {
+    transform: scaleX(1.3) scaleY(0.7) translateX(1px);
+  }
+  50% {
+    transform: scaleX(0.7) scaleY(1.3) translateX(-2px);
+  }
+  67% {
+    transform: scaleX(1.1) scaleY(0.7) translateX(1px);
+  }
+  82% {
+    transform: scaleX(0.8) scaleY(1.3) translateX(-1px);
+  }
+  92% {
+    transform: scaleX(1.05) scaleY(0.9);
+  }
+}
+
+@keyframes scaleShadow {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 10px 3px 0px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 12px 4px 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.white {
+  display: inline-block;
+  font-size: 144px;
+  font-style: bold;
+  color: #ccc;
+  text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+  1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 140px;
+  height: min-content;
+}
+
+
+.lightblue {
+  display: inline-block;
+  font-size: 90px;
+  line-height: 90px;
+  font-style: bold;
+  color: var(--color-lightblue);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  height: min-content;
+}
+
+.space {
+  font-size: 90px;
+  height: 50px;
+}
+
+.bounce {
+  animation: bounce 0.75s;
+  animation-delay: 0.1s;
+}
+
+
+
+.shadowGrow{
+  font-size: 100px;
+  &:hover {
+  font-size: 110px;
+  transition: all 0.3s;
+  text-shadow: 5px 3px 0px rgba(0, 0, 0, 0.8);
+}
+}
+
+
+
+
+@media (max-width: 768px) {
+  .space,
+  .white {
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .lightblue {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .space,
+  .white {
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .lightblue {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}

@@ -1,13 +1,13 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, HTMLProps } from "react";
 
-interface ModalProps {
+interface ModalProps extends Omit<HTMLProps<HTMLElement>, 'style'> {
 
 }
 
 const Modal: FunctionComponent<ModalProps> = (props) => {
 
-  return <div>
-
+  return <div className={props.className}>
+    {props.children}
   </div>
 }
 

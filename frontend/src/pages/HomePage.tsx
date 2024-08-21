@@ -2,10 +2,11 @@ import { FunctionComponent, useEffect } from "react";
 
 import MainLayout from "@components/ui/layouts/MainLayout";
 import { ErrorBoundary } from "@libs/utils";
+import HeroSection from "@components/ui/prototypes/HeroSection";
 
 const HomePage: FunctionComponent = () => {
 
-  useEffect(() => {
+/*   useEffect(() => {
     const fetchInitialData = async () => {
       try {
         const response = await fetch('http://localhost:3001/api'); 
@@ -16,10 +17,10 @@ const HomePage: FunctionComponent = () => {
       }
     }
     fetchInitialData();
-  },[])
+  },[]) */
   return <MainLayout >
     <ErrorBoundary error={false} fallBackComponent={<p>se rompio</p>}>
-      hola
+       <HeroSection />
     </ErrorBoundary>
   </MainLayout>
 }

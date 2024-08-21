@@ -1,24 +1,24 @@
-
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
 export const useAnimation = (
   ref: React.RefObject<HTMLElement>,
-  animationClass: string,
+  animationClassName: string,
   startAnimationEventType: string,
   endAnimationEventType: string
 ) => {
+  const handleAnimationStart = useCallback(() => {
+    if (ref.current) {
+      ref.current.classList.add(animationClassName);
+    }
+  }, [ref, animationClassName]);
+
+  const handleAnimationEnd = useCallback(() => {
+    if (ref.current) {
+      ref.current.classList.remove(animationClassName);
+    }
+  }, [ref, animationClassName]);
+
   useEffect(() => {
-    const handleAnimationStart = () => {
-      if (ref.current) ref.current.classList.add(animationClass);
-      
-    };
-
-    const handleAnimationEnd = () => {
-      if (ref.current) {
-        ref.current.classList.remove(animationClass);
-      }
-    };
-
     const elementRef = ref.current;
     if (elementRef) {
       elementRef.addEventListener(startAnimationEventType, handleAnimationStart);
@@ -27,9 +27,9 @@ export const useAnimation = (
 
     return () => {
       if (elementRef) {
-        elementRef.removeEventListener(startAnimationEventType, handleAnimationStart );
+        elementRef.removeEventListener(startAnimationEventType, handleAnimationStart);
         elementRef.removeEventListener(endAnimationEventType, handleAnimationEnd);
       }
     };
-  }, []);
+  }, [ref, startAnimationEventType, endAnimationEventType, handleAnimationStart, handleAnimationEnd]);
 };
